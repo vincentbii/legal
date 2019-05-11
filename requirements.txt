@@ -1,4 +1,5 @@
 django
 djangorestframework
+djangorestframework_simplejwt
 gunicorn
 django-heroku
