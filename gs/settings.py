@@ -69,7 +69,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
-    "https://nameless-crag-39075.herokuapp.com"
+    "http://102.166.171.41"
 ]
 
 ROOT_URLCONF = "gs.urls"
