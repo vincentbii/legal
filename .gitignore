@@ -5,4 +5,4 @@ staticfiles
 db.sqlite3
 # getting-started/*
 env/*
-# gs/settings.py
+gs/settings.py

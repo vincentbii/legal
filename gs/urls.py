@@ -29,6 +29,7 @@ urlpatterns = [
     # path("", hello.views.index, name="index"),
     # path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
+    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
