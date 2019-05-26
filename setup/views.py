@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from rest_framework.response import Response
+from rest_framework.decorators import list_route, detail_route
 
 from rest_framework import viewsets
 from .serializers import (
@@ -24,6 +26,17 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 class JobTypeViewSet(viewsets.ModelViewSet):
     queryset = JobType.objects.all()
     serializer_class = JobTypeSerializer
+
+    @list_route(methods=['POST'])
+    def deleteall(self, request, pk=None):
+        queryset = JobType.objects.all()
+        serializer_class = JobTypeSerializer(queryset, many=True)
+        l = request.data
+        for i in l:
+            # a.append(i)
+            dele = JobType.objects.get(id=i)
+            dele.delete()
+        return Response(serializer_class.data)
 
 
 class RequestTypeViewSet(viewsets.ModelViewSet):

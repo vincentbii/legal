@@ -15,7 +15,7 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('__all__')
 
 
-class JobTypeSerializer(serializers.HyperlinkedModelSerializer):
+class JobTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = JobType
         fields = ('__all__')
